@@ -19,7 +19,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run docs:build
-
+      - run: |
+          mkdir -p dist/docs
+          cp -r docs/.vitepress/dist/* dist/docs/
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
