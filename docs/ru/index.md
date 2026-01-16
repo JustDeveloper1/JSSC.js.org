@@ -1,4 +1,4 @@
-# JSSC — JavaScript String Compressor
+# JSSC — JavaScript String Compressor <Badge type="tip" text="2.0.0" />
 **JSSC (JavaScript String Compressor)** - **алгоритм сжатия текста без потерь** с открытым исходным кодом, разработанный специально для JavaScript.
 
 Он работает непосредственно со строками JavaScript (UTF-16) и создает сжатые данные, которые также являются допустимой строкой JavaScript.

@@ -8,6 +8,36 @@ export default defineConfig({
             { text: 'Home', link: 'https://jssc.js.org/', target: '_self' },
             { text: 'Docs', link: '/' }
         ],
+        search: {
+            provider: 'local',
+            options: {
+                locales: {
+                    ru: {
+                        translations: {
+                            button: {
+                                buttonText: 'Поиск',
+                                buttonAriaLabel: 'Поиск',
+                            },
+                            modal: {
+                                backButtonTitle: 'Закрыть',
+                                displayDetails: 'Подробнее',
+                                resetButtonTitle: 'Очистить',
+                                noResultsText: 'Ничего не найдено.',
+                                footer: {
+                                    selectText: 'выбрать',
+                                    selectKeyAriaLabel: 'Клавиша Enter',
+                                    navigateText: 'перейти',
+                                    navigateUpKeyAriaLabel: 'Стрелка вверх',
+                                    navigateDownKeyAriaLabel: 'Стрелка вниз',
+                                    closeText: 'закрыть',
+                                    closeKeyAriaLabel: 'Клавиша Esc'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     base: '/docs/',
     locales: {
@@ -21,5 +51,11 @@ export default defineConfig({
             link: '/ru/',
             description: 'Алгоритм сжатия JavaScript-строк без потерь с открытым исходным кодом.',
         }
-    }
+    },
+    head: [
+        ['link',{rel: 'preconnect', href: 'https://fonts.googleapis.com'}],
+        ['link',{rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin:''}],
+        ['link',{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap'}],
+    ],
+    lastUpdated: true,
 });
