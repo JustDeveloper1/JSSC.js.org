@@ -1,0 +1,9 @@
+:root {
+    --vp-c-brand-1: #515ada;
+    --vp-c-brand-2: #efd5ff;
+}
+
+.VPNavBar {
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,.75);
+}

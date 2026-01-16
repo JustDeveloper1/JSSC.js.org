@@ -1,0 +1,67 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px) saturate(1.4) var(--glass);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4) var(--glass);
+
+  transition: background 0.3s ease;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #515ada;
+}
+.ss {
+  display: none;
+}
+
+.github-link {
+  color: #515ada;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.github-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.docs-link {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #515ada;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.docs-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 800px) {
+  .brand {
+    display: none;
+  }
+  .ss {
+    display: block;
+  }
+}

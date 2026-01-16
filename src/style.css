@@ -1,0 +1,284 @@
+@import "tailwindcss";
+:root {
+    --light: #efd5ff;
+    --dark: #515ada;
+    --white: #f8f8ff;
+    --timing-function: cubic-bezier(.22,1,.36,1);
+}
+* {
+    box-sizing: border-box;
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--light), var(--dark));
+}
+
+#app {
+    height: 100%;
+}
+
+.hero {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, var(--light), var(--dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.logo {
+    width: 220px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.25));
+    transition:
+        transform 1.2s var(--timing-function),
+        top 1.2s var(--timing-function),
+        scale 1.2s var(--timing-function),
+        filter 1.2s var(--timing-function),
+        -webkit-filter 1.2s var(--timing-function);
+}
+
+.demo {
+    position: fixed;
+    inset: 0;
+    padding-top: 140px;
+    display: flex;
+    gap: 22px;
+    padding: 160px 40px 40px;
+    opacity: 0;
+    transition: opacity 0.8s var(--timing-function);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.demo textarea, .demo div, .demo section {
+    flex: 1;
+    resize: none;
+    border-radius: 22px;
+    border: none;
+    padding: 22px;
+    font-size: 16px;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(20px);
+}
+
+.demo section {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    border-radius: 32px;
+}
+
+@keyframes logo {
+    from {
+        transform: translateY(-38vh) scaleX(1);
+    }
+    10% {
+        transform: translateY(-38vh) scaleX(0.99);
+    }
+    20% {
+        transform: translateY(-38vh) scaleX(1.01);
+    }
+    30%, to {
+        transform: translateY(-38vh) scaleX(1);
+    }
+}
+
+.demo div {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    overflow-y: auto;
+}
+
+
+.demo span, .demo textarea {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.demo span {
+    background: linear-gradient(140deg, #efd5ff50, transparent);
+    border-radius: 4px;
+}
+.demo div[w='5'] span {
+    width: 48px;
+}
+.demo div[w='4'] span {
+    width: 36px;
+}
+.demo div[w='3'] span {
+    width: 28px;
+}
+.demo div[w='2'] span {
+    width: 18px;
+}
+.demo div[w='1'] span {
+    width: 8px;
+}
+
+.demo #data::before, 
+.demo .options::before,
+.demo .text::before,
+.demo .bin::before,
+.demo #input::before,
+.demo #output::before,
+.demo #inp::before,
+.demo #out::before,
+.demo .bin::after,
+.demo #inp::after,
+.demo #out::after {
+    position: fixed;
+    translate: 0% -100%;
+    font-size: 12px;
+    opacity: 0.33;
+    font-family: 'Lexend Zetta', monospace;
+    width: calc(100% - 44px);
+    text-align: center;
+}
+.demo #data::before {
+    content: '16-bit Data/Header character';
+    white-space: nowrap;
+}
+.demo .options::before {
+    content: 'Options';
+}
+.demo .text::before {
+    content: 'UTF-16';
+}
+.demo .bin::before {
+    content: 'Binary';
+}
+.demo .text::before,
+.demo .bin::before {
+    text-align: left;
+    padding-left: 16px;
+}
+.demo #input::before, 
+.demo #inp::before {
+    content: 'Input';
+}
+.demo #output::before, 
+.demo #out::before {
+    content: 'Output';
+}
+
+.demo section, .demo div {
+    transition: opacity 300ms var(--timing-function);
+}
+
+.demo .options, .demo #data {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+.demo .options div, .demo #data div {
+    padding: 0px;
+    justify-content: space-between;
+    border-radius: 0px;
+}
+.demo hr {
+    opacity: 0.33;
+}
+.demo .options label, .demo .options select {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.demo[v="Chars"] .bin::before {
+    content: "Characters";
+}
+.demo[v="Codes"] .bin::before {
+    content: "Character Codes";
+}
+
+.demo:not([m="d"]) .options .decompressor,
+.demo:not([m="c"]) .options .compressor {
+    display: none;
+}
+
+@media screen and (max-width: 970px) {
+    .demo .options {
+        display: none;
+    }
+}
+@media screen and (max-width: 460px) {
+    .demo #data::before {
+        content: '16-bit Data character';
+    }
+}
+@media screen and (max-width: 370px) {
+    .demo #data::before {
+        content: 'Data character';
+    }
+}
+@media screen and (max-width: 310px) {
+    .demo #data::before {
+        content: '16-bit Data';
+    }
+}
+@media screen and (max-width: 270px) {
+    .demo #data::before {
+        content: 'Data';
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 970px) {
+    .demo #data::before {
+        content: '16-bit Data/Header character (First 16 bits of compressed string)';
+    }
+}
+@media screen and (min-width: 1500px) {
+    .demo #data::before {
+        content: '16-bit Data/Header character (First 16 bits of compressed string)';
+    }
+}
+
+.demo .bin::after {
+    content: "Ratio: " var(--ratio) ":1; Saved: " var(--saved) ".";
+    bottom: 0px;
+    translate: 0% -4px;
+    padding-right: 16px;
+}
+
+.demo .bin::after,
+.demo #inp::after,
+.demo #out::after {
+    text-align: right;
+}
+
+.demo #inp::after,
+.demo #out::after {
+    content: var(--size);
+}
+
+#c {
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    color: var(--white);
+
+    opacity: 0;
+}
+.demo section,
+#c {
+    transition: 
+        opacity 300ms var(--timing-function),
+        filter 300ms var(--timing-function);
+}
+
+html {
+    outline-color: var(--white);
+    transition: 
+        transform 600ms var(--timing-function),
+        outline-color 300ms var(--timing-function);
+    outline: 2px solid var(--white);
+}
