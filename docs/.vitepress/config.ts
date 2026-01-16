@@ -33,7 +33,7 @@ export default defineConfig({
                                     closeKeyAriaLabel: 'Клавиша Esc'
                                 }
                             }
-                        }
+                        },
                     }
                 }
             }
@@ -50,6 +50,18 @@ export default defineConfig({
             lang: 'ru',
             link: '/ru/',
             description: 'Алгоритм сжатия JavaScript-строк без потерь с открытым исходным кодом.',
+            themeConfig: {
+                outline: {
+                    label: 'Содержание страницы'
+                },
+                lastUpdated: {
+                    text: 'Обновлено: '
+                },
+                nav: [
+                    { text: 'Главная страница', link: 'https://jssc.js.org/', target: '_self' },
+                    { text: 'Документация', link: '/' }
+                ]
+            }
         }
     },
     head: [
