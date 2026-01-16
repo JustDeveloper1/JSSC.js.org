@@ -5,6 +5,8 @@ It operates directly on JavaScript strings (UTF-16) and produces compressed data
 
 JSSC is distributed as a **UMD module** and can be used in browsers, Node.js, Deno, and other JavaScript environments.
 
+![Banner](https://jssc.js.org/jssc-colored-large.png)
+
 ## Key Features
 - ✨ **Lossless compression**
 - 🗜️ **High compression ratios**
@@ -50,7 +52,7 @@ Both names refer to the same project.
 
 ## Installation
 Install via npm
-```
+```bash
 npm i strc
 ```
 
@@ -107,12 +109,11 @@ Decompresses a previously compressed string/object/integer.
 
 ## Dependencies
 JSSC depends on:
-- <img align="top" src="https://just.js.org/justc/logo-50.svg" alt="JUSTC Logo" width="26" height="26"> [JUSTC](https://just.js.org/justc) by [JustStudio.](https://juststudio.is-a.dev/)
+- [JUSTC](https://just.js.org/justc) by [JustStudio.](https://juststudio.is-a.dev/)
 
 ## License
 [MIT © 2025-2026 JustDeveloper](https://github.com/JustDeveloper1/JSSC/blob/main/LICENSE)
 
----
 ## Minified Build
 For `.min.js`, I use [UglifyJS](https://github.com/mishoo/UglifyJS) by [Mihai Bazon](https://github.com/mishoo).
 ```bash
