@@ -55,7 +55,7 @@ export default defineConfig({
                     label: 'Содержание страницы'
                 },
                 lastUpdated: {
-                    text: 'Обновлено: '
+                    text: 'Обновлено'
                 },
                 nav: [
                     { text: 'Главная страница', link: 'https://jssc.js.org/', target: '_self' },

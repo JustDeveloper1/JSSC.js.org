@@ -109,7 +109,7 @@ Decompresses a previously compressed string/object/integer.
 
 ## Dependencies
 JSSC depends on:
-- [JUSTC](https://just.js.org/justc) by [JustStudio.](https://juststudio.is-a.dev/)
+- [JUSTC](https://just.js.org/justc) <Badge type="tip" text="^0.1.0" /> by [JustStudio.](https://juststudio.is-a.dev/)
 
 ## License
 [MIT © 2025-2026 JustDeveloper](https://github.com/JustDeveloper1/JSSC/blob/main/LICENSE)

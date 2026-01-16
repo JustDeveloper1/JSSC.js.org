@@ -110,7 +110,7 @@ Compresses the input and returns a compressed JavaScript string.
 
 ## Зависимости
 JSSC зависит от:
-- [JUSTC](https://just.js.org/justc) от «[JustStudio.](https://juststudio.is-a.dev/)»
+- [JUSTC](https://just.js.org/justc) <Badge type="tip" text="^0.1.0" /> от «[JustStudio.](https://juststudio.is-a.dev/)»
 
 ## Авторские Права
 [MIT © 2025-2026 JustDeveloper](https://github.com/JustDeveloper1/JSSC/blob/main/LICENSE)
