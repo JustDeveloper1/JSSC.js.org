@@ -24,9 +24,12 @@ jobs:
           mkdir -p dist/docs
           cp -r docs/.vitepress/dist/* dist/docs/
           cp CNAME dist/CNAME
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          destination_dir: website
-          force_orphan: true
+          source-directory: "dist"
+          destination-github-username: JustDeveloper1
+          destination-repository-name: "JSSC.js.org"
+          target-branch: "gh-pages"
+          target-directory: "website"
