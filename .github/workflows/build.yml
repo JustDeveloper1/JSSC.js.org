@@ -1,4 +1,4 @@
-name: Deploy
+name: Build website
 
 on:
   push:
@@ -24,7 +24,9 @@ jobs:
           mkdir -p dist/docs
           cp -r docs/.vitepress/dist/* dist/docs/
           cp CNAME dist/CNAME
+          cp just.config.js dist/just.config.js
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          destination_dir: website
