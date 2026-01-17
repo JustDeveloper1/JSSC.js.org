@@ -2,7 +2,7 @@ name: Publish website
 
 on:
   push:
-    branches: ["main"]
+    branches: ["gh-pages"]
   workflow_dispatch:
 
 permissions:
@@ -27,11 +27,11 @@ jobs:
         uses: js-just/_just@main
         with:
           path: website
-      - run: mv jssc/jssc.js website/jssc.js && mv jssc/jssc.min.js website/jssc.min.js
+      - run: mv jssc/jssc.js website/jssc.js && mv jssc/jssc.min.js website/jssc.min.js && mv jssc/jssc.d.ts website/jssc.d.ts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: website
 
   deploy:
     environment:
