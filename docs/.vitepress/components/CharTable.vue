@@ -16,12 +16,12 @@ const rows = Array.from({ length: 8 }, (_, i) =>
     <thead>
       <tr>
         <th></th>
-        <th v-for="c in cols" :key="c">_{{ c }}_</th>
+        <th v-for="c in cols" :key="c"><i>{{ c }}</i></th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="r in rows" :key="r">
-        <th>_{{ r }}_</th>
+        <th><i>{{ r }}</i></th>
         <td v-for="c in cols" :key="c">
           {{ cells?.[`${r}${c}`] ?? '' }}
         </td>
@@ -29,3 +29,19 @@ const rows = Array.from({ length: 8 }, (_, i) =>
     </tbody>
   </table>
 </template>
+
+<style>
+    .char-table th, .char-table td {
+        width: 32px;
+        min-width: 32px;
+        max-width: 32px;
+        text-align: center;
+        padding: 4px 0;
+    }
+    .char-table th:first-child {
+        width: 16px;
+        min-width: 16px;
+        max-width: 16px;
+        padding: 4px 0;
+    }
+</style>

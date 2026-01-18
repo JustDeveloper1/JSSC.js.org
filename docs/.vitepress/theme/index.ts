@@ -4,8 +4,11 @@ import type { Theme } from 'vitepress';
 import './style.css';
 import './fonts.css';
 
-const theme: Theme = {
-  ...DefaultTheme,
-};
+import CharTable from '../components/CharTable.vue';
 
-export default theme;
+export default {
+  extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('CharTable', CharTable)
+  }
+} satisfies Theme;
