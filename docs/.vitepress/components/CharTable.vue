@@ -105,6 +105,7 @@ const cells = computed<Record<string, string>>(() => ({
     ...props.defaults,
     ...props.cells
 }))
+
 </script>
 
 <template>
@@ -119,7 +120,7 @@ const cells = computed<Record<string, string>>(() => ({
             <tr v-for="r in rows" :key="r">
                 <th><i>{{ r }}</i></th>
                 <td v-for="c in cols" :key="c">
-                    {{ cells[`${r}${c}`] ?? '' }}
+                    {{ cells[`${r}${c}`] }}
                 </td>
             </tr>
         </tbody>
@@ -137,5 +138,10 @@ const cells = computed<Record<string, string>>(() => ({
     .char-table th {
         user-select: none;
         pointer-events: none;
+    }
+    .char-table td:empty {
+        border: none;
+        background: black;
+        opacity: 0.5;
     }
 </style>
