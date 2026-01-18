@@ -1,10 +1,10 @@
 I use this function to convert encodings to `<CharTable/>`
 
 ```js
-function toVueTS(ce="BASE") {
+function toVueTS(ce="BASE",skip=true) {
     const out = {}
     for (const [key, value] of Object.entries((new _JSSC.use())['JSSC'+ce.toUpperCase()]())) {
-        if (parseInt(key) > 0x40) out[parseInt(key).toString(16).toUpperCase()] = value;
+        if (parseInt(key) > 0x40 || !skip) out[parseInt(key).toString(16).toUpperCase()] = value;
     }
     return JSON.stringify(out).replaceAll('"',"'")
 }
