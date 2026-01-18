@@ -2,6 +2,13 @@
 defineProps<{
   cells?: Record<string, string>
 }>()
+
+const cols = Array.from({ length: 16 }, (_, i) =>
+  i.toString(16).toUpperCase()
+)
+const rows = Array.from({ length: 8 }, (_, i) =>
+  i.toString(16).toUpperCase()
+)
 </script>
 
 <template>
@@ -9,32 +16,16 @@ defineProps<{
     <thead>
       <tr>
         <th></th>
-        <th v-for="c in 16" :key="c">_<span>{{ (c - 1).toString(16).toUpperCase() }}</span>_</th>
+        <th v-for="c in cols" :key="c">_{{ c }}_</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row in 8" :key="row">
-        <th>_<span>{{ (row - 1).toString(16).toUpperCase() }}</span>_</th>
-        <td
-          v-for="col in 16"
-          :key="col"
-        >
-          {{ cells?.[`${row - 1}${(col - 1).toString(16).toUpperCase()}`] ?? '' }}
+      <tr v-for="r in rows" :key="r">
+        <th>_{{ r }}_</th>
+        <td v-for="c in cols" :key="c">
+          {{ cells?.[`${r}${c}`] ?? '' }}
         </td>
       </tr>
     </tbody>
   </table>
 </template>
-
-<style scoped>
-.char-table {
-  border-collapse: collapse;
-  font-family: monospace;
-}
-.char-table th,
-.char-table td {
-  border: 1px solid var(--vp-c-divider);
-  padding: 4px 6px;
-  text-align: center;
-}
-</style>
