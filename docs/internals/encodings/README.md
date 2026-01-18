@@ -6,6 +6,8 @@ function toVueTS(ce="BASE") {
     for (const [key, value] of Object.entries((new _JSSC.use())['JSSC'+ce.toUpperCase()]())) {
         if (parseInt(key) > 0x40) out[parseInt(key).toString(16).toUpperCase()] = value;
     }
-    return JSON.stringify(out)
+    return JSON.stringify(out).replaceAll('"',"'")
 }
 ```
+
+(i didnt use it in `base.md`, `ru.md`, `enru.md`, `enkk.md`)
