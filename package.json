@@ -1,0 +1,41 @@
+{
+  "name": "jssc.js.org",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustDeveloper1/JSSC.js.org.git"
+  },
+  "author": "JustDeveloper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustDeveloper1/JSSC.js.org/issues"
+  },
+  "homepage": "https://jssc.js.org",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "pretty-bytes": "^7.1.0",
+    "strc": "^2.0.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@shikijs/vitepress-twoslash": "^3.21.0",
+    "terser": "^5.44.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitepress": "^1.6.4"
+  }
+}
