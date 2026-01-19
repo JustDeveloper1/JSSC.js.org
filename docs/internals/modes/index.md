@@ -8,7 +8,7 @@ Compression modes are **an internal part of the algorithm** and are selected aut
 
 ## List of JSSC Compression Modes
 - `00` **No Compression**
-- `01` **2-3 characters in 1**
+- `01` **Two-Digit CharCode Concatenation**
 - `02` **ASCII in UTF-16**
 - `03` **Integers (any)**
 - `04` **Build alphabet**

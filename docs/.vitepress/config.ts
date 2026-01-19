@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress';
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
+import { withMermaid } from "vitepress-plugin-mermaid";
 
-export default defineConfig({
+export default withMermaid(defineConfig({
     title: 'JSSC',
     description: 'Open-source, self-validating, lossless string compression algorithm designed specifically for JavaScript',
     themeConfig: {
@@ -81,6 +82,11 @@ export default defineConfig({
     markdown: {
         codeTransformers: [
             transformerTwoslash()
-        ]
-    }
-});
+        ],
+    },
+    mermaid: {
+        themeVariables: {
+            fontFamily: "'Source Code Pro', monospace",
+        },
+    },
+}));
