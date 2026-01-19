@@ -43,6 +43,53 @@
             <demo-nav></demo-nav>
 
             <section class="hero" id="hero">
+                <svg width="0" height="0" style="position:absolute">
+                    <filter id="waves">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="228" result="noise1">
+                            <animate attributeName="baseFrequency" dur="45s" values="
+                                0.008 0.02;
+                                0.013 0.028;
+                                0.009 0.017;
+                                0.011 0.024;
+                                0.008 0.02
+                            " keyTimes="0;0.3;0.6;1" calcMode="spline" keySplines="
+                                0.4 0 0.6 1;
+                                0.4 0 0.6 1;
+                                0.4 0 0.6 1
+                            " repeatCount="indefinite"></animate>
+                        </feTurbulence>
+
+                        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="1" seed="67" result="noise2">
+                            <animate attributeName="baseFrequency" dur="24s" values="
+                                0.008 0.02;
+                                0.013 0.028;
+                                0.009 0.017;
+                                0.011 0.024;
+                                0.008 0.02
+                            " keyTimes="0;0.3;0.6;1" calcMode="spline" keySplines="
+                                0.4 0 0.6 1;
+                                0.4 0 0.6 1;
+                                0.4 0 0.6 1
+                            " repeatCount="indefinite"></animate>
+                        </feTurbulence>
+
+                        <feComposite in="noise1" in2="noise2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="noise">
+                            <animate attributeName="k2" values="0.85;1.15;0.9;1.05;0.85" dur="60s" repeatCount="indefinite"></animate>
+                            <animate attributeName="k3" values="1.1;0.9;1.2;0.95;1.1" dur="73s" repeatCount="indefinite"></animate>
+                        </feComposite>
+                        <feComposite in="SourceGraphic" in2="noise2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="pregraphic"></feComposite>
+                        <feComposite in="SourceGraphic" in2="pregraphic" operator="arithmetic" k1="0" k2="1" k3="0.15" k4="0" result="graphic">
+                            <animate attributeName="k2" values="1;1.15;0.9;1.05;1" dur="60s" repeatCount="indefinite"></animate>
+                            <animate attributeName="k3" values="0.15;0.2;0.4;0.25;0.15" dur="5s" repeatCount="indefinite"></animate>
+                        </feComposite>
+
+                        <feDisplacementMap in="graphic" in2="noise" scale="140" xChannelSelector="R" yChannelSelector="G">
+                            <animate attributeName="scale" values="500;900;600;800;500" dur="53s" repeatCount="indefinite"></animate>
+                        </feDisplacementMap>
+                    </filter>
+                </svg>
+                <div class="wave-layer" id="oil"></div>
+
                 <img src="/jssc-large.png" class="logo" id="logo" style="scale: 1.5" alt="JSSC" />
             </section>
 

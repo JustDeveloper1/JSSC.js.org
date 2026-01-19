@@ -14,6 +14,7 @@ const bin = Elem('bin');
 const opt = Elem('3rd');
 const c = Elem('c');
 const txt = Elem('1st');
+const waves = Elem('oil');
 
 if (logo) logo.style.scale = '1.75';
 for (const e of [bin, opt, c, txt]) if (e) {
@@ -24,6 +25,8 @@ for (const e of [bin, opt, c, txt]) if (e) {
 setTimeout(() => {
     document.documentElement.style.transform = 'rotate3d(1, 1, 1, 360deg)';
     document.documentElement.style.outlineColor = 'transparent';
+    if (waves) 
+        waves.style.opacity = '1';
 }, 100);
 document.addEventListener('DOMContentLoaded', () => setTimeout(() => {
     if (!logo || !hero || !demo || !bin || !opt || !c) return;
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => setTimeout(() => {
         demo.style.zIndex = '3';
         logo.src = '/jssc.png';
         logo.style.transform = 'translateY(-38vh)';
-        logo.style.animation = '1s logo cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite';
+        logo.style.animation = 'var(--anim-duration) logo var(--anim-timing-function) infinite';
         demo.style.filter = '';
         txt.style.filter = '';
         initDemo(demo);
