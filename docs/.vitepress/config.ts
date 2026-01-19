@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 
 export default defineConfig({
     title: 'JSSC',
@@ -77,4 +78,9 @@ export default defineConfig({
         ['meta',{name: 'theme-color', content: '#efd5ff'}]
     ],
     lastUpdated: true,
+    markdown: {
+        codeTransformers: [
+            transformerTwoslash()
+        ]
+    }
 });

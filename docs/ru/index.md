@@ -66,7 +66,7 @@ npm i strc
 
 ## Использование
 #### JavaScript
-```js{1}
+```js{1} twoslash
 const { compress, decompress } = require('strc');
 
 const example = await compress("Hello, world!");
@@ -74,7 +74,7 @@ await decompress(example);
 ```
 
 #### TypeScript
-```ts{1}
+```ts{1} twoslash
 import { compress, decompress } from 'strc';
 
 const example = await compress("Hello, world!");
@@ -95,14 +95,16 @@ await JSSC.decompress(example);
 <script src="https://unpkg.com/justc"></script>
 <script src="https://unpkg.com/strc"></script>
 ```
-```js
+```js twoslash
+const JSSC = require('strc');
+
+// ---cut---
 const compressed   = await JSSC.compress("Hello, world!");
 const decompressed = await JSSC.decompress(compressed);
 ```
 
 ## API
 #### `compress(input: string | object | number): Promise<string>`
-Compresses the input and returns a compressed JavaScript string.
 Сжимает инпут и выдаёт сжатую JavaScript-строку.
 
 #### `decompress(input: string, stringify?: boolean): Promise<string | object | number>`
