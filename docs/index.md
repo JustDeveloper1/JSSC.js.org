@@ -66,7 +66,7 @@ Or you can use it on your website by inserting the following HTML `script` tags.
 
 ## Usage
 #### JavaScript
-```js
+```js{1}
 const { compress, decompress } = require('strc');
 
 const example = await compress("Hello, world!");
@@ -74,7 +74,7 @@ await decompress(example);
 ```
 
 #### TypeScript
-```ts
+```ts{1}
 import { compress, decompress } from 'strc';
 
 const example = await compress("Hello, world!");
@@ -82,7 +82,7 @@ await decompress(example);
 ```
 
 #### Deno (server-side)
-```ts
+```ts{1}
 import JSSC from 'https://jssc.js.org/jssc.min.js';
 
 const example = await JSSC.compress("Hello, world!");
