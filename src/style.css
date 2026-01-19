@@ -70,10 +70,18 @@ html, body {
             rgba(0,0,0,.15) var(--noise),
             transparent var(--noise),
             transparent 2px
+        ),
+        repeating-radial-gradient(
+            circle at 0 0,
+            rgba(0,0,0,.2),
+            rgba(0,0,0,.2) 1px,
+            transparent 1px,
+            transparent 2px
         );
     opacity: 0.08;
     z-index: 3;
     animation: noise var(--anim-duration) var(--anim-timing-function) calc(var(--anim-duration) * 2.25) infinite;
+    mix-blend-mode: soft-light;
 }
 
 @keyframes noise {
