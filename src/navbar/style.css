@@ -58,7 +58,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .brand {
+  .brand, .docs-link span:not(.ss) {
     display: none;
   }
   .ss {

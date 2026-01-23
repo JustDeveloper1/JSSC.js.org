@@ -15,7 +15,8 @@ class navbar extends HTMLElement {
                         class="docs-link"
                         aria-label="Documentation"
                     >
-                        Docs
+                        <span>Documentation</span>
+                        <span class="ss">Docs</span>
                     </a>
                     <a
                         href="https://github.com/JustDeveloper1/JSSC"
