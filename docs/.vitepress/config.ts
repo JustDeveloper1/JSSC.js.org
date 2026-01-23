@@ -7,7 +7,7 @@ export default withMermaid(defineConfig({
     description: 'Open-source, self-validating, lossless string compression algorithm designed specifically for JavaScript',
     themeConfig: {
         nav: [
-            { text: 'Home', link: 'https://jssc.js.org/', target: '_self' },
+            { text: 'Demo', link: 'https://jssc.js.org/', target: '_self' },
             { text: 'Docs', link: '/' }
         ],
         search: {
@@ -60,7 +60,7 @@ export default withMermaid(defineConfig({
                     text: 'Обновлено'
                 },
                 nav: [
-                    { text: 'Главная страница', link: 'https://jssc.js.org/', target: '_self' },
+                    { text: 'Демонстрация', link: 'https://jssc.js.org/', target: '_self' },
                     { text: 'Документация', link: '/' }
                 ]
             }
