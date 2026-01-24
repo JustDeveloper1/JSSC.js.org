@@ -13,3 +13,6 @@
     flex-direction: row;
     justify-content: center;
 }
+.mermaid #Encode_Input p::before {
+    content: ' Encode Input';
+}

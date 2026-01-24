@@ -88,5 +88,8 @@ export default withMermaid(defineConfig({
         themeVariables: {
             fontFamily: "'Source Code Pro', monospace",
         },
+        flowchart: {
+            wrappingWidth: 1000,
+        },
     },
 }));
