@@ -8,11 +8,13 @@ import './style.css';
 import './fonts.css';
 
 import CharTable from '../components/CharTable.vue';
+import HeaderCharacter from '../components/HeaderCharacter.vue';
 
 export default {
-  extends: DefaultTheme,
-  enhanceApp({ app }) {
-    app.use(TwoslashFloatingVue);
-    app.component('CharTable', CharTable);
-  }
+    extends: DefaultTheme,
+    enhanceApp({ app }) {
+        app.use(TwoslashFloatingVue);
+        app.component('CharTable', CharTable);
+        app.component('HeaderCharacter', HeaderCharacter);
+    }
 } satisfies Theme;
