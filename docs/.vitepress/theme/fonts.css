@@ -1,4 +1,4 @@
 :root {
-  --vp-font-family-base: "Rubik", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
-  --vp-font-family-mono: 'Source Code Pro', monospace;
+    --vp-font-family-base: "Rubik", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+    --vp-font-family-mono: 'Source Code Pro', monospace;
 }
