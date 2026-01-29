@@ -3,9 +3,11 @@
     --vp-c-brand-2: #efd5ff;
 }
 
-.VPNavBar {
-    backdrop-filter: blur(16px);
-    background: rgba(255,255,255,.75);
+.VPNavBar, .VPNavBar .content-body, .VPLocalNav {
+    background: transparent !important;
+}
+.VPNavBar .content-body, .VPLocalNav {
+    backdrop-filter: blur(16px) !important;
 }
 
 .mermaid {
