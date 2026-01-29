@@ -15,7 +15,6 @@ export default withMermaid(defineConfig({
             text: 'Under the Hood',
             collapsed: true,
             items: [
-                    { text: 'Overview', link: '/internals/' },
                     { text: 'Header Character', link: '/internals/header' },
                     {
                         text: 'Compression Modes',
@@ -137,4 +136,5 @@ export default withMermaid(defineConfig({
             wrappingWidth: 1000,
         },
     },
+    cleanUrls: true
 }));
