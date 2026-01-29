@@ -10,6 +10,51 @@ export default withMermaid(defineConfig({
             { text: 'Demo', link: 'https://jssc.js.org/', target: '_self' },
             { text: 'Docs', link: '/' }
         ],
+        sidebar: [
+            {
+            text: 'Under the Hood',
+            collapsed: true,
+            items: [
+                    { text: 'Overview', link: '/internals/' },
+                    { text: 'Header Character', link: '/internals/header' },
+                    {
+                        text: 'Compression Modes',
+                        link: '/internals/modes/',
+                        collapsed: true,
+                        items: [
+                            { text: 'Two-Digit CharCode Concatenation', link: '/internals/modes/01' },
+                            { text: 'Two-Byte CharCode Concatenation', link: '/internals/modes/02' },
+                            { text: 'Decimal Integer Packing', link: '/internals/modes/03' },
+                            { text: 'Alphabet Encoding', link: '/internals/modes/04' },
+                            { text: 'Character Encoding', link: '/internals/modes/05' },
+                            { text: 'Inline Integer Encoding', link: '/internals/modes/06' },
+                        ]
+                    },
+                    {
+                        text: 'Character Encodings',
+                        link: '/internals/encodings/',
+                        collapsed: true,
+                        items: [
+                            { text: 'JSSCBASE', link: '/internals/encodings/base' },
+                            { text: 'JSSCRU', link: '/internals/encodings/ru' },
+                            { text: 'JSSCENRU', link: '/internals/encodings/enru' },
+                            { text: 'JSSCENKK', link: '/internals/encodings/enkk' },
+                            { text: 'JSSCHI', link: '/internals/encodings/hi' },
+                            { text: 'JSSCENHI', link: '/internals/encodings/enhi' },
+                            { text: 'JSSCBN', link: '/internals/encodings/bn' },
+                            { text: 'JSSCENBN', link: '/internals/encodings/enbn' },
+                            { text: 'JSSCHIBN', link: '/internals/encodings/hibn' },
+                            { text: 'JSSCJA', link: '/internals/encodings/ja' },
+                            { text: 'JSSCTelu', link: '/internals/encodings/telu' },
+                            { text: 'JSSCMR', link: '/internals/encodings/mr' },
+                            { text: 'JSSCB', link: '/internals/encodings/b' },
+                            { text: 'JSSCE', link: '/internals/encodings/e' },
+                            { text: 'JSSCAR', link: '/internals/encodings/ar' },
+                        ]
+                    }
+                ]
+            }
+        ],
         search: {
             provider: 'local',
             options: {
