@@ -13,7 +13,7 @@ Compression modes are **an internal part of the algorithm** and are selected aut
 - [`03` **Decimal Integer Packing**](03)
 - [`04` **Alphabet Encoding**](04)
 - [`05` **Character Encoding**](05)
-- `06` **Integers (>15)**
+- `06` **Integers (<15)**
 - `07` **Frequency map**
 - `08` **URL**
 - `09` **Segmentation**
