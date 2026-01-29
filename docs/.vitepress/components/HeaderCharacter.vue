@@ -3,8 +3,11 @@ import { computed } from 'vue'
 
 const props = defineProps<{
     cells?: Record<string, string>
-    defaults?: Record<string, string>
+    defaults?: Record<string, string>,
+    translate: Record<string, string>
 }>()
+
+const code = props.translate.Code || 'Code';
 
 // default
 const baseDefaults: Record<string, string> = {
@@ -25,13 +28,13 @@ const baseDefaults: Record<string, string> = {
     '0E': '14',
     '0F': '15',
 
-    '10': 'Code #2',
+    '10': `${code} #2`,
     '14': 's?',
-    '15': 'Code #3',
+    '15': `${code} #3`,
     '18': 'i?',
     '19': 'o?',
     '1A': 'b?',
-    '1B': 'Code #1',
+    '1B': `${code} #1`,
 }
 const reversed: Record<string, string> = {};
 for (const [key, value] of Object.entries(baseDefaults)) {
@@ -55,8 +58,8 @@ const cells = computed<Record<string, string>>(() => ({
 }))
 
 const names: Record<string, string> = {
-    0: 'Bits',
-    1: 'Blocks'
+    0: props.translate.Bits || 'Bits',
+    1: props.translate.Blocks || 'Blocks'
 }
 
 const widths = [
