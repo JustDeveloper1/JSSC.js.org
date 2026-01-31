@@ -90,16 +90,16 @@ const encodings = [
 ];
 const modes = [
     '00: No compression',
-    '01: 2-3 characters in 1',
-    '02: ASCII in UTF-16',
-    '03: Integers (Any)',
-    '04: Build alphabet',
-    '05: Character encoding',
-    '06: Integers ( < 15 )',
-    '07: Frequency map',
+    '01: Two-Digit CharCode Concatenation',
+    '02: Two-Byte CharCode Concatenation',
+    '03: Decimal Integer Packing',
+    '04: Alphabet Encoding',
+    '05: Character Encoding',
+    '06: Inline Integer Encoding',
+    '07: Frequency Map',
     '08: URL',
     '09: Segmentation',
-    '10: Repeating strings',
+    '10: String Repetition',
     '11: RESERVED',
     '12: RESERVED',
     '13: RESERVED',
@@ -120,7 +120,7 @@ const modes = [
     '28: RESERVED',
     '29: RESERVED',
     '30: RESERVED',
-    '31: Recursive compression',
+    '31: Recursive Compression',
 ];
 const types = [
     'String',
