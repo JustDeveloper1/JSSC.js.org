@@ -14,8 +14,11 @@ Compression modes are **an internal part of the algorithm** and are selected aut
 - [`04` **Alphabet Encoding**](04)
 - [`05` **Character Encoding**](05)
 - [`06` **Inline Integer Encoding**](06)
-- `07` **Frequency map**
-- `08` **URL**
-- `09` **Segmentation**
-- `10` **Repeating strings**
-- `31` **Recursive compression**
+- [`07` **Frequency Map**](07)
+- [`08` **URL**](08)
+- `09` **Segmentation** <br>
+  > Splits the input into independent segments that may use different compression modes.
+- `10` **String Repetition** <br>
+  > Detects and encodes repeated strings.
+- `31` **Recursive Compression** <br>
+  > Applies compression recursively to already compressed data.
