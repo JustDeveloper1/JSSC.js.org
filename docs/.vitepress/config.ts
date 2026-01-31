@@ -27,6 +27,8 @@ export default withMermaid(defineConfig({
                             { text: 'Alphabet Encoding', link: '/internals/modes/04' },
                             { text: 'Character Encoding', link: '/internals/modes/05' },
                             { text: 'Inline Integer Encoding', link: '/internals/modes/06' },
+                            { text: 'Frequency Map', link: '/internals/modes/07' },
+                            { text: 'URL', link: '/internals/modes/08' },
                         ]
                     },
                     {
