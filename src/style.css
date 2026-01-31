@@ -6,10 +6,14 @@
     --timing-function: cubic-bezier(.22,1,.36,1);
     --anim-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
     --anim-duration: 1s;
+
+    --f-main: "Rubik", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+    --f-code: 'Source Code Pro', monospace;
+    --f-lxzt: 'Lexend Zetta', monospace;
 }
 * {
     box-sizing: border-box;
-    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+    font-family: var(--f-main)
 }
 
 html, body {
@@ -164,7 +168,7 @@ html, body {
 
 
 .demo span, .demo textarea {
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--f-code);
 }
 
 .demo span {
@@ -202,7 +206,7 @@ html, body {
     translate: 0% -100%;
     font-size: 12px;
     opacity: 0.33;
-    font-family: 'Lexend Zetta', monospace;
+    font-family: var(--f-lxzt);
     width: calc(100% - 44px);
     text-align: center;
 }
@@ -328,6 +332,7 @@ html, body {
     bottom: 0px;
     text-align: center;
     color: var(--white);
+    font-family: var(--f-code);
 
     opacity: 0;
 }
