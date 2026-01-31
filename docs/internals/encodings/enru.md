@@ -1,5 +1,5 @@
 # JSSCENRU Character Encoding — `02` <Badge type="tip" text="since v1.0.0" />
-> [Compression Mode 05](../modes/05.md) · Internal Encoding Table
+> [Compression Mode `05`](../modes/05.md) · Internal Encoding Table
 
 <ClientOnly>
     <CharTable :cells="{ 
