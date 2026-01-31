@@ -93,7 +93,7 @@ export default withMermaid(defineConfig({
             lang: 'en'
         },
         ru: {
-            label: 'Russian',
+            label: 'Русский',
             lang: 'ru',
             link: '/ru/',
             description: 'Алгоритм сжатия JavaScript-строк без потерь с открытым исходным кодом.',
