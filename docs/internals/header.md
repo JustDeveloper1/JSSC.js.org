@@ -10,7 +10,7 @@ It encodes the compression mode, flags, and mode-specific parameters entirely in
 
 Although each compression mode is free to interpret the 16 bits differently, most modes follow a **standard layout**.
 
-Instead of viewing the header as four nibbles, JSSC groups bits into **semantic blocks**:
+Instead of viewing the header as four nibbles, JSSC groups bits into **blocks**:
 
 <ClientOnly>
     <HeaderCharacter :translate="{
