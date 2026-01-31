@@ -1,5 +1,5 @@
 # JSSCE Character Encoding — `13` <Badge type="tip" text="since v2.0.0" />
-> Compression Mode 05 · Internal Encoding Table
+> [Compression Mode 05](../modes/05.md) · Internal Encoding Table
 
 <ClientOnly>
     <CharTable :cells="{'41':'A','42':'B','43':'C','44':'D','45':'E','46':'F','47':'G','48':'H','49':'I','50':'P','51':'Q','52':'R','53':'S','54':'T','55':'U','56':'V','57':'W','58':'X','59':'Y','60':'`','61':'a','62':'b','63':'c','64':'d','65':'e','66':'f','67':'g','68':'h','69':'i','70':'p','71':'q','72':'r','73':'s','74':'t','75':'u','76':'v','77':'w','78':'x','79':'y',

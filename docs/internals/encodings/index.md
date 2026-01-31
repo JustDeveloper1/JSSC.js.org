@@ -5,7 +5,7 @@ These encodings are **not related** to ASCII, UTF‑8, UTF‑16, Windows‑125x,
 
 They exist **only inside JSSC** and are used to optimize compression for many languages, primarily the most widely used ones.
 
-Character Encodings are used by **Compression Mode `05` — “Character Encoding”**.
+Character Encodings are used by [**Compression Mode `05` — “Character Encoding”**](../modes/05.md).
 There are **15 Character Encodings** covering **23 languages**.
 
 ## List of JSSC Character Encodings
