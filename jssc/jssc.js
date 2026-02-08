@@ -1,53 +1,11 @@
-/*
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JSSC = {}));
+})(this, (function (exports) { 'use strict';
 
-MIT License
+    const JUSTC = require('justc');
 
-Copyright (c) 2025-2026 JustDeveloper <https://justdeveloper.is-a.dev/>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-*/
-
-/*
-    __         _______________  __
-    \ \    __ / / __/ __/ ___/ / /
-     > >  / // /\ \_\ \/ /__  < < 
-    /_/   \___/___/___/\___/   \_\
-
-     JavaScript String Compressor 
-         https://jssc.js.org/     
-
-    npm i strc
-
-*/
-
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(['justc'], factory);                 /*   amd    */
-    } else if (typeof module === 'object' && module.exports) {
-        const exports = factory(require('justc'));  /*   node   */
-        module.exports = {...exports, default: exports};
-    } else {
-        root.JSSC = factory(root.JUSTC);            /* browsers */
-        Object.freeze(root.JSSC);
-    }
-}(typeof self !== 'undefined' ? self : this, function (JUSTC) {
     const name__ = 'JSSC';
     const prefix = name__+': ';
     if ((String.fromCharCode(65536).charCodeAt(0) === 65536) || !(String.fromCharCode(256).charCodeAt(0) === 256)) {
@@ -69,14 +27,6 @@ SOFTWARE.
         return {max, output, maxCharCode, min};
     }
 
-    function codesString(cds) {
-        let output = '';
-        cds.forEach(code => {
-            output += String.fromCharCode(code);
-        });
-        return output
-    }
-
     function charCode(num) {
         return String.fromCharCode(num + 32);
     }
@@ -87,7 +37,7 @@ SOFTWARE.
     function stringChunks(str, num) {
         const output = [];
         for (let i = 0; i < str.length; i += num) {
-            output.push(str.slice(i, i + num))
+            output.push(str.slice(i, i + num));
         }
         return output
     }
@@ -306,7 +256,7 @@ SOFTWARE.
         for (const char of _JSSC._BASE.concat(_JSSC._Ind)) {
             chrsBase[i++] = _JSSC._char(char);
             if (i === 91) {
-                i = 97
+                i = 97;
             }
         }
         return chrsBase
@@ -317,7 +267,7 @@ SOFTWARE.
     _JSSC._BN = function(baseOrLatin) {
         const chrsBase = baseOrLatin();
         for (let i = 2432; i < 2559; i++) {
-            chrsBase[i - 2304] = _JSSC._char(i) /* Unicode 0980 - 09FF */
+            chrsBase[i - 2304] = _JSSC._char(i); /* Unicode 0980 - 09FF */
         }
         chrsBase[255] = _JSSC._char(2404);
         return chrsBase;
@@ -328,7 +278,7 @@ SOFTWARE.
         for (const char of _JSSC._BASE.concat(_JSSC._Ind)) {
             chrsBase[i++] = _JSSC._char(char);
             if (i === 91) {
-                i = 97
+                i = 97;
             }
         }
         return chrsBase;
@@ -426,7 +376,7 @@ SOFTWARE.
             chrsBase[i - 1536] = _JSSC._char(i);
         }
         return chrsBase;
-    }
+    };
     _JSSC.use = class {
         constructor() {
             let output = {};
@@ -623,9 +573,9 @@ SOFTWARE.
                 
                 if (i + length > str.length) {
                     result += SEQUENCE_MARKER + 
-                             String.fromCharCode(length + 32) + 
-                             String.fromCharCode(count + 32) +
-                             str.slice(i);
+                                String.fromCharCode(length + 32) + 
+                                String.fromCharCode(count + 32) +
+                                str.slice(i);
                     break;
                 }
                 
@@ -747,7 +697,7 @@ SOFTWARE.
             }
         }
     };
-    
+
     const freqMapSplitters = [
         " \u200B","\u0000",
         "\u001F", "\u0001",
@@ -870,8 +820,7 @@ SOFTWARE.
                 str = str.slice(begin.length);
                 break;
             }
-        };
-
+        }
         let code3 = -1;
         async function toJUSTC(obj) {
             try {
@@ -1010,8 +959,7 @@ SOFTWARE.
                     } else {
                         binOut.push(decToBin(convertNums[character], 4));
                     }
-                };
-                let [output, RLE, sequences] = ['', false, false];
+                }            let [output, RLE, sequences] = ['', false, false];
                 function binPadStart(bin) {
                     if (bin.length < 16) {
                         const numm = 4 - stringChunks(bin, 4).length;
@@ -1049,19 +997,19 @@ SOFTWARE.
                     for (const char of chars) {
                         addChar(char);
                     }
-                    sliceChars(chars.length)
+                    sliceChars(chars.length);
                 } else {
                     const a1 = parseInt(String(chars[0]) + String(chars[1]) + String(chars[2]));
                     const a2 = parseInt(String(chars[0]) + String(chars[1]));
                     if (checkChar(a1)) {
                         addChar(a1);
-                        sliceChars(3)
+                        sliceChars(3);
                     } else if (checkChar(a2)) {
                         addChar(a2);
-                        sliceChars(2)
+                        sliceChars(2);
                     } else {
                         addChar(chars[0]);
-                        sliceChars(1)
+                        sliceChars(1);
                     }
                 }
             }
@@ -1129,7 +1077,7 @@ SOFTWARE.
                 }
                 let [outputStr, repeatAfter, seq] = ['', false, false];
                 for (const characterCode of convertCharCodes) {
-                    outputStr += String.fromCharCode(binToDec(characterCode))
+                    outputStr += String.fromCharCode(binToDec(characterCode));
                 }
 
                 [outputStr, repeatAfter, seq] = processOutput(outputStr);
@@ -1275,7 +1223,7 @@ SOFTWARE.
                 const segOpts = {
                     ...opts,
                     segmentation: false
-                }
+                };
                 const compressed = await compress(seg, segOpts);
 
                 out += String.fromCharCode(seg.length);
@@ -1349,15 +1297,14 @@ SOFTWARE.
                     best = rc;
                 }
             }
-        } catch (_){};
-
+        } catch (_){}
         return best;
     }
 
     function characterEncodings(id, realstr) {
         const strcode2charencoding = {};
         for (const [name, code] of Object.entries(_JSSC._IDs)) {
-            strcode2charencoding[code] = name
+            strcode2charencoding[code] = name;
         }
         const possibleCharEncoding = strcode2charencoding[id];
         if (possibleCharEncoding) {
@@ -1420,7 +1367,9 @@ SOFTWARE.
      */
     async function decompress(str, stringify = false) {
         if (typeof str != 'string') throw new Error(prefix+'Invalid input.');
-        const strcodes = cryptCharCode(str.charCodeAt(0) - 32, true);
+        const strcodes = cryptCharCode((
+            (str.charCodeAt(0) - 32 + 65535) % 65535
+        ), true);
         const strcode = strcodes.code;
         
         function repeatChars(txt) {
@@ -1616,12 +1565,18 @@ SOFTWARE.
         }
     }
 
-    return {
+    var index = {
         compress,
         decompress,
         get [Symbol.toStringTag]() {
             return name__;
         }
     };
+
+    exports.compress = compress;
+    exports.decompress = decompress;
+    exports.default = index;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
