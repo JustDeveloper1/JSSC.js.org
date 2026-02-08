@@ -350,3 +350,7 @@ html {
         outline-color 300ms var(--timing-function);
     outline: 2px solid var(--white);
 }
+
+::selection {
+    background-color: #efd5ff;
+}
