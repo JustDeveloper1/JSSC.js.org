@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const JUSTC = require('justc');
+var JUSTC = require('justc');
 
 const name__ = 'JSSC';
 const prefix = name__+': ';

@@ -1,10 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JSSC = {}));
-})(this, (function (exports) { 'use strict';
-
-    const JUSTC = require('justc');
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('justc')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'justc'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JSSC = {}, global.JUSTC));
+})(this, (function (exports, JUSTC) { 'use strict';
 
     const name__ = 'JSSC';
     const prefix = name__+': ';
