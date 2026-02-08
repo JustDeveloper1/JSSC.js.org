@@ -1,3 +1,7 @@
+/*
+    Main / Styles
+*/
+
 :root {
     --vp-c-brand-1: #515ada;
     --vp-c-brand-2: #efd5ff;
@@ -15,6 +19,27 @@
     flex-direction: row;
     justify-content: center;
 }
-.mermaid #Encode_Input p::before {
+.mermaid foreignObject:not(#Encode_Input foreignObject) {
+    overflow: visible;
+}
+
+/*///////////////////////////////////////////////////////////////*/
+
+/*
+    Translations
+*/
+
+/* 
+    Page: internals/modes/04
+*/
+
+/*
+    Note: `content` should start with a space (U+0020) and be exactly 13 characters long (including the space at the start).
+*/
+
+.mermaid #Encode_Input p::before { /* English */
     content: ' Encode Input';
+}
+html:lang(ru) .mermaid #Encode_Input p::before { /* Russian */
+    content: ' Кодирование ';
 }

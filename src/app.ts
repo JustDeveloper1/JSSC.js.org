@@ -67,9 +67,9 @@ function outputPlaceholder(mode:string) {
 function stringChunks(str : string, num : number): string[] {
     const output = [];
     for (let i = 0; i < str.length; i += num) {
-        output.push(str.slice(i, i + num))
+        output.push(str.slice(i, i + num));
     }
-    return output
+    return output;
 }
 const encodings = [
     '00: JSSCBASE',
@@ -87,9 +87,10 @@ const encodings = [
     '12: JSSCB',
     '13: JSSCE',
     '14: JSSCAR',
+    '15: (reserved)'
 ];
 const modes = [
-    '00: No compression',
+    '00: No Compression',
     '01: Two-Digit CharCode Concatenation',
     '02: Two-Byte CharCode Concatenation',
     '03: Decimal Integer Packing',
@@ -100,27 +101,27 @@ const modes = [
     '08: URL',
     '09: Segmentation',
     '10: String Repetition',
-    '11: RESERVED',
-    '12: RESERVED',
-    '13: RESERVED',
-    '14: RESERVED',
-    '15: RESERVED',
-    '16: RESERVED',
-    '17: RESERVED',
-    '18: RESERVED',
-    '19: RESERVED',
-    '20: RESERVED',
-    '21: RESERVED',
-    '22: RESERVED',
-    '23: RESERVED',
-    '24: RESERVED',
-    '25: RESERVED',
-    '26: RESERVED',
-    '27: RESERVED',
-    '28: RESERVED',
-    '29: RESERVED',
-    '30: RESERVED',
-    '31: Recursive Compression',
+    '31: (reserved)',
+    '12: (reserved)',
+    '13: (reserved)',
+    '14: (reserved)',
+    '15: (reserved)',
+    '16: (reserved)',
+    '17: (reserved)',
+    '18: (reserved)',
+    '19: (reserved)',
+    '20: (reserved)',
+    '21: (reserved)',
+    '22: (reserved)',
+    '23: (reserved)',
+    '24: (reserved)',
+    '25: (reserved)',
+    '26: (reserved)',
+    '27: (reserved)',
+    '28: (reserved)',
+    '29: (reserved)',
+    '30: (reserved)',
+    '11: Recursive Compression',
 ];
 const types = [
     'String',
@@ -253,28 +254,37 @@ export function initDemo(demo: HTMLElement) {
 
     options.visual.addEventListener('change', () => {
         demo.setAttribute('v', options.visual.value);
+
         if (input.value) {
             let [w1, w2] = [0,0];
             [w1, inp.innerHTML] = toBin(input.value, options.visual.value);
             [w2, out.innerHTML] = toBin(output.value,options.visual.value);
+
             inp.setAttribute('w', String(w1));
             out.setAttribute('w', String(w2));
+
             [hide1, hide2] = [w1 == 0, w2 == 0];
             update(inp, out, hide1, hide2);
         }
     });
     options.mode.addEventListener('change', async () => {
         demo.setAttribute('m', options.mode.value);
+
         if (options.mode.value == 'c') mode = window.JSSC.compress;
         else mode = window.JSSC.decompress;
+
         const mode_ = (options.mode.value == 'd' ? 'de' : '') + 'compress';
         input.placeholder = inputPlaceholder(mode_);
         output.placeholder = outputPlaceholder(mode_);
+
         await run();
     });
 
-    for (const name of ['JUSTC', 'segmentation', 'recursive']) options[name as keyof typeof options].addEventListener('change', async () => {
+    for (const name of [
+        'JUSTC', 'segmentation', 'recursive'
+    ]) options[name as keyof typeof options].addEventListener('change', async () => {
         opts[name as keyof typeof opts] = options[name as keyof typeof options].value == 'y';
+
         await run();
     });
 }

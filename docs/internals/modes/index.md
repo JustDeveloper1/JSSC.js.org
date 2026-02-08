@@ -20,5 +20,5 @@ Compression modes are **an internal part of the algorithm** and are selected aut
   > Splits the input into independent segments that may use different compression modes.
 - `10` **String Repetition** <br>
   > Detects and encodes repeated strings.
-- `31` **Recursive Compression** <br>
+- `11` **Recursive Compression** <br>
   > Applies compression recursively to already compressed data.

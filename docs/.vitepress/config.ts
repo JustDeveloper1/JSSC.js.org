@@ -2,6 +2,27 @@ import { defineConfig } from 'vitepress';
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import { withMermaid } from "vitepress-plugin-mermaid";
 
+function encodings(lang? : string) : {}[] {
+    const prefix = (lang ? '/' + lang : '') + '/internals/encodings/';
+    return [
+        { text: 'JSSCBASE', link: prefix + 'base' },
+        { text: 'JSSCRU', link: prefix + 'ru' },
+        { text: 'JSSCENRU', link: prefix + 'enru' },
+        { text: 'JSSCENKK', link: prefix + 'enkk' },
+        { text: 'JSSCHI', link: prefix + 'hi' },
+        { text: 'JSSCENHI', link: prefix + 'enhi' },
+        { text: 'JSSCBN', link: prefix + 'bn' },
+        { text: 'JSSCENBN', link: prefix + 'enbn' },
+        { text: 'JSSCHIBN', link: prefix + 'hibn' },
+        { text: 'JSSCJA', link: prefix + 'ja' },
+        { text: 'JSSCTelu', link: prefix + 'telu' },
+        { text: 'JSSCMR', link: prefix + 'mr' },
+        { text: 'JSSCB', link: prefix + 'b' },
+        { text: 'JSSCE', link: prefix + 'e' },
+        { text: 'JSSCAR', link: prefix + 'ar' },
+    ]
+}
+
 export default withMermaid(defineConfig({
     title: 'JSSC',
     description: 'Open-source, self-validating, lossless string compression algorithm designed specifically for JavaScript',
@@ -11,9 +32,9 @@ export default withMermaid(defineConfig({
         ],
         sidebar: [
             {
-            text: 'Under the Hood',
-            collapsed: true,
-            items: [
+                text: 'Under the Hood',
+                collapsed: true,
+                items: [
                     { text: 'Header Character', link: '/internals/header' },
                     {
                         text: 'Compression Modes',
@@ -34,23 +55,7 @@ export default withMermaid(defineConfig({
                         text: 'Character Encodings',
                         link: '/internals/encodings/',
                         collapsed: true,
-                        items: [
-                            { text: 'JSSCBASE', link: '/internals/encodings/base' },
-                            { text: 'JSSCRU', link: '/internals/encodings/ru' },
-                            { text: 'JSSCENRU', link: '/internals/encodings/enru' },
-                            { text: 'JSSCENKK', link: '/internals/encodings/enkk' },
-                            { text: 'JSSCHI', link: '/internals/encodings/hi' },
-                            { text: 'JSSCENHI', link: '/internals/encodings/enhi' },
-                            { text: 'JSSCBN', link: '/internals/encodings/bn' },
-                            { text: 'JSSCENBN', link: '/internals/encodings/enbn' },
-                            { text: 'JSSCHIBN', link: '/internals/encodings/hibn' },
-                            { text: 'JSSCJA', link: '/internals/encodings/ja' },
-                            { text: 'JSSCTelu', link: '/internals/encodings/telu' },
-                            { text: 'JSSCMR', link: '/internals/encodings/mr' },
-                            { text: 'JSSCB', link: '/internals/encodings/b' },
-                            { text: 'JSSCE', link: '/internals/encodings/e' },
-                            { text: 'JSSCAR', link: '/internals/encodings/ar' },
-                        ]
+                        items: encodings()
                     }
                 ]
             }
@@ -106,6 +111,35 @@ export default withMermaid(defineConfig({
                 },
                 nav: [
                     { text: 'Демонстрация', link: 'https://jssc.js.org/', target: '_self' }
+                ],
+                sidebar: [
+                    {
+                        text: 'Под капотом',
+                        collapsed: true,
+                        items: [
+                            { text: 'Заголовочный Символ', link: '/ru/internals/header' },
+                            {
+                                text: 'Режимы Сжатия',
+                                link: '/ru/internals/modes/',
+                                collapsed: true,
+                                items: [
+                                    { text: 'Two-Digit CharCode Concatenation', link: '/ru/internals/modes/01' },
+                                    { text: 'Two-Byte CharCode Concatenation', link: '/ru/internals/modes/02' },
+                                    { text: 'Decimal Integer Packing', link: '/ru/internals/modes/03' },
+                                    { text: 'Alphabet Encoding', link: '/ru/internals/modes/04' },
+                                    { text: 'Character Encoding', link: '/ru/internals/modes/05' },
+                                    { text: 'Inline Integer Encoding', link: '/ru/internals/modes/06' },
+                                    { text: 'Frequency Map', link: '/ru/internals/modes/07' },
+                                ]
+                            },
+                            {
+                                text: 'Кодировки Символов',
+                                link: '/ru/internals/encodings/',
+                                collapsed: true,
+                                items: encodings('ru')
+                            }
+                        ]
+                    }
                 ]
             }
         }
