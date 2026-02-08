@@ -89,6 +89,10 @@ export default withMermaid(defineConfig({
                     }
                 }
             }
+        },
+        logoLink: {
+            link: 'https://jssc.js.org/',
+            target: '_self'
         }
     },
     base: '/docs/',
